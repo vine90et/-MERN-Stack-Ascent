@@ -1,0 +1,39 @@
+body {
+  margin: 0;
+  height: 100vh;
+  width:100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Helvetica', Arial, sans-serif;
+  background-color: #5c677d;
+}
+.container{
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    left: 35%;
+}
+
+.card{
+    border-radius: 12px;
+    background: #979dac;
+    margin-top: 4px;
+    display: flex;
+    height: 30rem;
+    width:27rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+}
+.pic{
+    height: 10rem;
+    width: 10rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.reset-styles{
+      text-decoration: none;
+      color: 005f73;
+    }
