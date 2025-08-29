@@ -1,0 +1,66 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            align-items: top;
+            justify-content: center;
+        }
+        .container{
+            height:fit-content;
+            width: auto;
+            background-color: #fdf0d5;
+            border-radius: 15px;
+            padding: 8px;
+            border:2px solid black;
+        }
+        .score{
+            border-radius: 6px;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <p>Enter a number</p>
+      <input class="score" type="number" />
+      <button class="score" onClick="checkGrade()">Show Grade</button>
+      <p id="result"></p>
+    </div>
+  </body>
+  <script>
+    let score = document.getElementsByClassName("score").value;
+    let result = document.getElementById("result");
+
+    function calculateGrade(score) {
+      if (score >= 90) {
+        console.log("A");
+        return "A";
+      } else if (score >= 80) {
+        console.log("B");
+        return "B";
+      } else if (score >= 70) {
+        console.log("C");
+        return "C";
+      } else if (score >= 60) {
+          console.log("D");
+          return "D";
+        } else {
+            console.log("D");
+            return "F";
+      }
+    }
+
+    function checkGrade(score){
+        if(score == "" && score < 0 && score > 100){
+            result.innerHTML="Please Enter Valid Grade";
+        }else{
+            result.innerHTML=`your Grade:${calculateGrade(score)}`;
+        }
+    }
+
+    
+  </script>
+</html>
