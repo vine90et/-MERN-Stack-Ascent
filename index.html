@@ -2,65 +2,88 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Grade Calculator</title>
     <style>
-        body{
-            display: flex;
-            align-items: top;
-            justify-content: center;
-        }
-        .container{
-            height:fit-content;
-            width: auto;
-            background-color: #fdf0d5;
-            border-radius: 15px;
-            padding: 8px;
-            border:2px solid black;
-        }
-        .score{
-            border-radius: 6px;
-        }
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #5E6882;
+        height: 100vh;
+        width: 100vw;
+        font-family: Arial, sans-serif;
+      }
+      .container {
+        text-align: center;
+        width: 20rem;
+        background-color: #C4C8D4;
+        border-radius: 15px;
+        padding: 16px;
+        border: 2px solid #8991A9;
+        box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
+      }
+      input {
+        width: 100%;
+        border-radius: 6px;
+        padding: 6px;
+        margin: 4px 0;
+        border: 1px solid #8991A9;
+      }
+      button {
+        border-radius: 6px;
+        padding: 8px;
+        font-weight: 600;
+        background-color: #4a5759;
+        color: #b0c4b1;
+        border: none;
+        cursor: pointer;
+        margin-top: 6px;
+      }
+      button:hover {
+        background-color: #3a4647;
+      }
+      #result {
+        margin-top: 12px;
+        font-size: 1.1rem;
+        font-weight: bold;
+      }
     </style>
   </head>
   <body>
     <div class="container">
-      <p>Enter a number</p>
-      <input class="score" type="number" />
-      <button class="score" onClick="checkGrade()">Show Grade</button>
+      <h3>Enter a number</h3>
+      <div class="input">
+        <input id="scoreInput" type="number" placeholder="Enter score (0-100)" />
+        <button onClick="checkGrade()">Show Grade</button>
+      </div>
       <p id="result"></p>
     </div>
-  </body>
-  <script>
-    let score = document.getElementsByClassName("score").value;
-    let result = document.getElementById("result");
 
-    function calculateGrade(score) {
-      if (score >= 90) {
-        console.log("A");
-        return "A";
-      } else if (score >= 80) {
-        console.log("B");
-        return "B";
-      } else if (score >= 70) {
-        console.log("C");
-        return "C";
-      } else if (score >= 60) {
-          console.log("D");
-          return "D";
-        } else {
-            console.log("D");
-            return "F";
+    <script>
+      let result = document.getElementById("result");
+
+      function calculateGrade(score) {
+        if (score >= 90) return { grade: "A", color: "green" };
+        else if (score >= 80) return { grade: "B", color: "blue" };
+        else if (score >= 70) return { grade: "C", color: "orange" };
+        else if (score >= 60) return { grade: "D", color: "brown" };
+        else return { grade: "F", color: "red" };
       }
-    }
 
-    function checkGrade(score){
-        if(score == "" && score < 0 && score > 100){
-            result.innerHTML="Please Enter Valid Grade";
-        }else{
-            result.innerHTML=`your Grade:${calculateGrade(score)}`;
+      function checkGrade() {
+        let score = document.getElementById("scoreInput").value;
+        score = Number(score);
+
+        if (isNaN(score) || score < 0 || score > 100) {
+          result.innerHTML = " Please Enter a Valid Score (0–100)";
+          result.style.color = "black";
+        } else {
+          let { grade, color } = calculateGrade(score);
+          result.innerHTML = ` Your Grade: ${grade}`;
+          result.style.color = color;
         }
-    }
-
-    
-  </script>
+      }
+    </script>
+  </body>
 </html>
