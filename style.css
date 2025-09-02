@@ -1,0 +1,42 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: top;
+    margin-top: 12px;
+    height: 100vh;
+    width: 100vw;
+    padding: 0px;
+    background: linear-gradient(145deg, #0f172a 0%, #0b2030 50%, #0a2f2f 100%);
+    overflow: hidden;
+
+}
+
+.container{
+    position: absolute;
+    top:15%;
+    background-color: rgb(151, 166, 152);
+    height: fit-content;
+    width: 40%;
+    text-align: center;
+    padding: 8px;
+    border-radius: 12px;
+}
+#quote{
+    font-style: italic;
+    padding: 4px;
+}
+.Author{
+    padding: 4px;
+    font-size: smaller;
+    text-align: start;
+    flex-direction: column;
+}
+
+.button{
+    border-radius: 7px;
+    padding: 5px;
+    border: 2px;
+  color:wheat;
+  background-color: darkslategray;
+
+}
