@@ -30,13 +30,15 @@ body{
     font-size: smaller;
     text-align: start;
     flex-direction: column;
+    font-weight: 400;
 }
+
 
 .button{
     border-radius: 7px;
     padding: 5px;
     border: 2px;
-  color:wheat;
-  background-color: darkslategray;
-
+    color:wheat;
+    background-color: darkslategray;
+    margin-left: 8px;
 }
