@@ -3,13 +3,13 @@ const {MongoClient } = require('mongodb');
 const app = express();
 app.use(express.json());
 const port = 3000;
-const url = "mongodb+srv://vine90et:2LVc8xU0x2r7U539@cluster0.agccj.mongodb.net/uber?retryWrites=true&w=majority&appName=Cluster0"
+const url = "mongodb://localhost:27017"
 const dbName = 'resumeData';
 let db;
 async function mongodbClient(){
     const client = new MongoClient (url);
     try{
-        await client.connect;
+        await client.connect();
         console.log("✅ Connected successfully to MongoDB");
         db = client.db(dbName);
         console.log(`📊 Using database: ${dbName}`);
