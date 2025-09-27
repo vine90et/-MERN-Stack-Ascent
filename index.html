@@ -1,0 +1,116 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+  body {
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(45deg, #0b0c10, #1f2833, #16222a);
+    font-family: Arial, sans-serif;
+    color: #222;
+  }
+
+  #root {
+    padding: 16px;
+    border-radius: 12px;
+    text-align: center;
+    margin-top: 80px;
+    border: 2px solid black;
+    background: linear-gradient(45deg, #e6ccb2, #aec3b0);
+    height: fit-content;
+    width: fit-content;
+  }
+
+  h1 {
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: #0b0c10;
+  }
+
+  .card {
+    background: #fff;
+    padding: 16px;
+    margin: 12px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-align: left;
+    max-width: 400px;
+  }
+
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  }
+
+  .header-title {
+    font-size: 20px;
+    margin-bottom: 8px;
+    color: #1f2833;
+  }
+
+  .para {
+    font-size: 16px;
+    color: #444;
+    line-height: 1.4;
+  }
+</style>
+
+  <body>
+    <div id="root"></div>
+
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+      function ProjectCard({title, description}) {
+        return (
+          <div className="card">
+            <h2 className="header-title">{title}</h2>
+            <p className="para">{description}</p>
+          </div>
+        );
+      }
+      function App() {
+          const cardData =[
+          {
+            title:"Blog Platform Backend",
+            description:"Built a complete blog backend with authentication, CMS, and CRUD APIs.",
+          },
+          {
+            
+            title:"E-Commerce API",
+            description:"Developed RESTful APIs for products, cart, checkout, and payment integration."
+        },
+          {
+            title:"Portfolio Website",
+            description:"Created a personal portfolio using React to showcase my projects and skills."
+        },
+          {
+            title:"Chat Application",
+            description:"Real-time chat app with WebSocket integration and secure user authentication."
+        }
+        ]
+        return (
+            <div>
+                <h1>My Projects</h1>
+                {cardData.map((data,i )=>(
+                    <ProjectCard 
+                        key={i}
+                        title={data.title}
+                        description={data.description}
+                    />
+        ))}
+            </div>
+        );
+      }
+
+      const root = ReactDOM.createRoot(document.getElementById("root"));
+      root.render(<App />);
+    </script>
+  </body>
+</html>
