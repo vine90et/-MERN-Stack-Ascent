@@ -1,0 +1,34 @@
+[
+  {
+    "userId": "user1",
+    "company": "TechCorp",
+    "role": "Frontend Developer",
+    "startDate": "2022-01-15T00:00:00.000Z",
+    "endDate": "2023-06-30T00:00:00.000Z",
+    "isCurrent": false,
+    "location": "New York, USA",
+    "technologies": ["React", "JavaScript", "CSS", "HTML"],
+    "description": "Developed and maintained web applications with React."
+  },
+  {
+    "userId": "user2",
+    "company": "DataSolutions",
+    "role": "Backend Developer",
+    "startDate": "2021-05-01T00:00:00.000Z",
+    "endDate": "2023-02-28T00:00:00.000Z",
+    "isCurrent": false,
+    "location": "San Francisco, USA",
+    "technologies": ["Node.js", "Express", "MongoDB"],
+    "description": "Built REST APIs and managed database integrations."
+  },
+  {
+    "userId": "user1",
+    "company": "InnovateX",
+    "role": "Fullstack Developer",
+    "startDate": "2023-07-01T00:00:00.000Z",
+    "isCurrent": true,
+    "location": "Remote",
+    "technologies": ["React", "Node.js", "MongoDB", "TypeScript"],
+    "description": "Working on full-stack applications with modern web technologies."
+  }
+]
