@@ -16,7 +16,7 @@ const ProjectCard = ({ project }) => {
   } = project || {};
 
   return (
-    <div className="relative bg-indigo-50 border border-indigo-200 shadow-md rounded-xl hover:shadow-indigo-300 my-2 hover:-translate-y-0.5 transition-all duration-300">
+    <div className="relative bg-indigo-50 border shadow-md rounded-xl hover:shadow-indigo-300 my-2 hover:-translate-y-0.5 transition-all duration-300">
 
       <img src={img} alt="Project image" className="overflow-hidden mb-2 w-full rounded-t-xl" />
 

@@ -35,7 +35,7 @@ const Projects = () => {
     <div className=''>
       <div className='px-5 my-19 mx-auto text-center'>
         <h1 className='text-4xl font-bold text-indigo-400  '>Projects</h1>
-        <p className='text-black/70 '> Explore some of my recent work — from web apps to full-stack projects.</p>
+        <p className='text-black/70 txt '> Explore some of my recent work — from web apps to full-stack projects.</p>
       </div>
 
       {error &&
